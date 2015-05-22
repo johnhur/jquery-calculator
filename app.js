@@ -2,7 +2,7 @@ var res = "";
 var userInput = "";
 var left = "";
 var right = "";
-var divide = '\&divide;)'
+var divide = '\&divide;)';
 
 $(document).ready(function() {
     	$("span").not("#calc").not("#cancel").click(function(event){
@@ -36,15 +36,17 @@ $(document).ready(function() {
 						$("#screen").html(parseInt(left) * parseInt(right));
 
 					}
-			else if (userInput[i] === divide) {
+			else if (userInput[i] === "/") {
 						left = userInput.slice(0,i);
 						right = userInput.slice((i+1), userInput.length);
-						($("#screen").html(parseInt(left)/parseInt(right));
+						$("#screen").html(parseFloat(left)/parseFloat(right));
 
 					}
 
 			}
     	});
+
+
 // function lR() {
 // 		res.concat(userInput); 
 // 				for(var i = 0; i < res.length; i++) {
@@ -59,8 +61,9 @@ $(document).ready(function() {
 // 				}
 // 			}
 // console.log(lR());
-
+console.log('&divide;');
 });
+
 
 
 //     	$(".operator").click(function(event){
